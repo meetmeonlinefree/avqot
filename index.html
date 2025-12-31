@@ -1,1 +1,223 @@
-<h1>AVQOT.TJ</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AVQOT.TJ — Доставка еды</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #f9fafb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6a00, #ff9f0f);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: white;
+            color: #ff6a00;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .foods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .food {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .food img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .food div {
+            padding: 15px;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #ff6a00, #ff9f0f);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AVQOT.TJ</h1>
+    <p>Быстрая доставка еды по всему Таджикистану 🍔🍕</p>
+    <a href="#order" class="btn">Сделать заказ</a>
+</header>
+
+<section>
+    <h2 style="text-align:center; margin-bottom:40px;">Почему AVQOT?</h2>
+    <div class="features">
+        <div class="feature">
+            🚀
+            <h3>Быстро</h3>
+            <p>Доставка от 30 минут</p>
+        </div>
+        <div class="feature">
+            🍱
+            <h3>Большой выбор</h3>
+            <p>Лучшие рестораны города</p>
+        </div>
+        <div class="feature">
+            💳
+            <h3>Удобная оплата</h3>
+            <p>Наличные и онлайн</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align:center; margin-bottom:40px;">Популярные блюда</h2>
+    <div class="foods">
+        <div class="food">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="">
+            <div>
+                <strong>Бургер</strong><br>
+                от 25 сомони
+            </div>
+        </div>
+        <div class="food">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="">
+            <div>
+                <strong>Пицца</strong><br>
+                от 45 сомони
+            </div>
+        </div>
+        <div class="food">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="">
+            <div>
+                <strong>Плов</strong><br>
+                от 30 сомони
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="order">
+    <div class="cta">
+        <h2>Готовы заказать?</h2>
+        <p>Скачайте приложение или закажите прямо сейчас</p>
+        <a href="#" class="btn">Скачать приложение</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 AVQOT.TJ — Доставка еды
+</footer>
+
+<script>
+    // Небольшая анимация появления
+    const items = document.querySelectorAll('.feature, .food');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
+
+    items.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = '0.6s';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
